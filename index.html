@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Knowledge Mining Ontology (kmo)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/kmo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/kmo","name":"Knowledge Mining Ontology (kmo)", "headline":"Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.", "datePublished":"2023/11/06", "version":"v2.0", "author":[{"@type":"Person","name":"Yali Jiang"},{"@type":"Person","name":"Haijiang Li"},{"@type":"Person","name":"Gang Yang"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Knowledge Mining Ontology (kmo)</h1>
+<h2>Release 2023/11/06</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/kmo">https://w3id.org/kmo</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/kmo">https://w3id.org/kmo</a></dd>
+<dt>Revision:</dt>
+<dd>v2.0</dd>
+<dt>Authors:</dt>
+<dd>Yali Jiang, Dalian Maritime University</dd><dd>Haijiang Li, Cardiff University</dd><dd>Gang Yang, Cardiff University</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>kmo Ontology Specification</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</span>
+</div>
+<div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Knowledge Mining Ontology (kmo)): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">
+         <span>bridge</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#CompressiveStrengthTest" title="http://w3id.org/kmo#CompressiveStrengthTest">
+         <span>compressive strength test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#CompressiveStrengthTestingMachine"
+         title="http://w3id.org/kmo#CompressiveStrengthTestingMachine">
+         <span>compressive strength testing machine</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Concrete" title="http://w3id.org/kmo#Concrete">
+         <span>concrete</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">
+         <span>equipment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">
+         <span>experimentation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Ladder" title="http://w3id.org/kmo#Ladder">
+         <span>ladder</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">
+         <span>material</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">
+         <span>organization</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#ReboundHammer" title="http://w3id.org/kmo#ReboundHammer">
+         <span>rebound hammer</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#ReboundTest" title="http://w3id.org/kmo#ReboundTest">
+         <span>rebound test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">
+         <span>standard</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">
+         <span>underwater inspection standard</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Wetsuit" title="http://w3id.org/kmo#Wetsuit">
+         <span>wetsuit</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://w3id.org/kmo#build" title="http://w3id.org/kmo#build">
+         <span>build</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#builtBy" title="http://w3id.org/kmo#builtBy">
+         <span>built by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#conduct" title="http://w3id.org/kmo#conduct">
+         <span>conduct</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">
+         <span>conducted by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#guideTo" title="http://w3id.org/kmo#guideTo">
+         <span>guide to</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">
+         <span>guided by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#hasCriterion" title="http://w3id.org/kmo#hasCriterion">
+         <span>has criterion</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">
+         <span>has experimental material</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#hasMaterialType" title="http://w3id.org/kmo#hasMaterialType">
+         <span>has material type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#manage" title="http://w3id.org/kmo#manage">
+         <span>manage</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#managedBy" title="http://w3id.org/kmo#managedBy">
+         <span>managed by</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">
+         <span>need equipment</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://w3id.org/kmo#address" title="http://w3id.org/kmo#address">
+         <span>address</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#angle" title="http://w3id.org/kmo#angle">
+         <span>angle</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#applicableScope" title="http://w3id.org/kmo#applicableScope">
+         <span>applicable scope</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#brand" title="http://w3id.org/kmo#brand">
+         <span>brand</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#briidgeID" title="http://w3id.org/kmo#briidgeID">
+         <span>briidge i d</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#date" title="http://w3id.org/kmo#date">
+         <span>date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#designStrength" title="http://w3id.org/kmo#designStrength">
+         <span>design strength</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#fcu" title="http://w3id.org/kmo#fcu">
+         <span>fcu</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#isBottomSurface" title="http://w3id.org/kmo#isBottomSurface">
+         <span>is bottom surface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#isHorizontal" title="http://w3id.org/kmo#isHorizontal">
+         <span>is horizontal</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#isSideSurface" title="http://w3id.org/kmo#isSideSurface">
+         <span>is side surface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#isTopSurface" title="http://w3id.org/kmo#isTopSurface">
+         <span>is top surface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#materialCondition" title="http://w3id.org/kmo#materialCondition">
+         <span>material condition</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#materialID" title="http://w3id.org/kmo#materialID">
+         <span>material i d</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#maxSpanLength" title="http://w3id.org/kmo#maxSpanLength">
+         <span>max span length</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#maxWidth" title="http://w3id.org/kmo#maxWidth">
+         <span>max width</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">
+         <span>name</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#phone" title="http://w3id.org/kmo#phone">
+         <span>phone</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#R" title="http://w3id.org/kmo#R">
+         <span>r</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Raa" title="http://w3id.org/kmo#Raa">
+         <span>raa</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rab" title="http://w3id.org/kmo#Rab">
+         <span>rab</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rah" title="http://w3id.org/kmo#Rah">
+         <span>rah</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rat" title="http://w3id.org/kmo#Rat">
+         <span>rat</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">
+         <span>release date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rh" title="http://w3id.org/kmo#Rh">
+         <span>rh</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rm2" title="http://w3id.org/kmo#Rm2">
+         <span>rm2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rm3" title="http://w3id.org/kmo#Rm3">
+         <span>rm3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rm4" title="http://w3id.org/kmo#Rm4">
+         <span>rm4</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#Rn" title="http://w3id.org/kmo#Rn">
+         <span>rn</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#totalLength" title="http://w3id.org/kmo#totalLength">
+         <span>total length</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#waterDepth" title="http://w3id.org/kmo#waterDepth">
+         <span>water depth</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#weight" title="http://w3id.org/kmo#weight">
+         <span>weight</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://w3id.org/kmo#case" title="http://w3id.org/kmo#case">
+         <span>case</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#DMU" title="http://w3id.org/kmo#DMU">
+         <span>d m u</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#GB/T50081-2019" title="http://w3id.org/kmo#GB/T50081-2019">
+         <span>g b/ t50081 2019</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#GB/T9138-2015" title="http://w3id.org/kmo#GB/T9138-2015">
+         <span>g b/ t9138 2015</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#JGJ/T23-2011" title="http://w3id.org/kmo#JGJ/T23-2011">
+         <span>j g j/ t23 2011</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#JGJ55-2011" title="http://w3id.org/kmo#JGJ55-2011">
+         <span>j g j55 2011</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#JTG5120-2021" title="http://w3id.org/kmo#JTG5120-2021">
+         <span>j t g5120 2021</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine"
+         title="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">
+         <span>microcomputer controlled electro hydraulic servo testing machine</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#SBART_Wetsuit" title="http://w3id.org/kmo#SBART_Wetsuit">
+         <span>s b a r t wetsuit</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#T/CECSG:J56-2019" title="http://w3id.org/kmo#T/CECSG:J56-2019">
+         <span>t/ c e c s g: j56 2019</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#UnderwaterReboundTest" title="http://w3id.org/kmo#UnderwaterReboundTest">
+         <span>underwater rebound test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#UniaxialCompressiveStrengthTest"
+         title="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">
+         <span>uniaxial compressive strength test</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#ZJYY_Ladder" title="http://w3id.org/kmo#ZJYY_Ladder">
+         <span>z j y y ladder</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#ZJYY_ReboundHammer" title="http://w3id.org/kmo#ZJYY_ReboundHammer">
+         <span>z j y y rebound hammer</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Knowledge Mining Ontology (kmo)) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Knowledge Mining Ontology (kmo)).
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">
+            <span>bridge</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#CompressiveStrengthTest" title="http://w3id.org/kmo#CompressiveStrengthTest">
+            <span>compressive strength test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#CompressiveStrengthTestingMachine"
+            title="http://w3id.org/kmo#CompressiveStrengthTestingMachine">
+            <span>compressive strength testing machine</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Concrete" title="http://w3id.org/kmo#Concrete">
+            <span>concrete</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">
+            <span>equipment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">
+            <span>experimentation</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Ladder" title="http://w3id.org/kmo#Ladder">
+            <span>ladder</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">
+            <span>material</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">
+            <span>organization</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#ReboundHammer" title="http://w3id.org/kmo#ReboundHammer">
+            <span>rebound hammer</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#ReboundTest" title="http://w3id.org/kmo#ReboundTest">
+            <span>rebound test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">
+            <span>standard</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">
+            <span>underwater inspection standard</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Wetsuit" title="http://w3id.org/kmo#Wetsuit">
+            <span>wetsuit</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://w3id.org/kmo#Bridge">
+      <h3>bridge<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Bridge</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#briidgeID" title="http://w3id.org/kmo#briidgeID">briidge i d</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#builtBy" title="http://w3id.org/kmo#builtBy">built by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasCriterion" title="http://w3id.org/kmo#hasCriterion">has criterion</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasMaterialType" title="http://w3id.org/kmo#hasMaterialType">has material type</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#managedBy" title="http://w3id.org/kmo#managedBy">managed by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#maxSpanLength" title="http://w3id.org/kmo#maxSpanLength">max span length</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#maxWidth" title="http://w3id.org/kmo#maxWidth">max width</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#totalLength" title="http://w3id.org/kmo#totalLength">total length</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#build" title="http://w3id.org/kmo#build">build</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#manage" title="http://w3id.org/kmo#manage">manage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#CompressiveStrengthTest">
+      <h3>compressive strength test<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#CompressiveStrengthTest</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#case" title="http://w3id.org/kmo#case">case</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#UniaxialCompressiveStrengthTest"
+               title="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">uniaxial compressive strength test</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#CompressiveStrengthTestingMachine">
+      <h3>compressive strength testing machine<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#CompressiveStrengthTestingMachine</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine"
+               title="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">microcomputer controlled electro hydraulic servo testing machine</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Concrete">
+      <h3>concrete<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Concrete</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Equipment">
+      <h3>equipment<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Equipment</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#CompressiveStrengthTestingMachine"
+               title="http://w3id.org/kmo#CompressiveStrengthTestingMachine">compressive strength testing machine</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#Ladder" title="http://w3id.org/kmo#Ladder">ladder</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#ReboundHammer" title="http://w3id.org/kmo#ReboundHammer">rebound hammer</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#Wetsuit" title="http://w3id.org/kmo#Wetsuit">wetsuit</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#brand" title="http://w3id.org/kmo#brand">brand</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#weight" title="http://w3id.org/kmo#weight">weight</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Experimentation">
+      <h3>experimentation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Experimentation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#CompressiveStrengthTest" title="http://w3id.org/kmo#CompressiveStrengthTest">compressive strength test</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#ReboundTest" title="http://w3id.org/kmo#ReboundTest">rebound test</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">guided by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">has experimental material</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#guideTo" title="http://w3id.org/kmo#guideTo">guide to</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterReboundTest" title="http://w3id.org/kmo#UnderwaterReboundTest">underwater rebound test</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#UniaxialCompressiveStrengthTest"
+               title="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">uniaxial compressive strength test</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Ladder">
+      <h3>ladder<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Ladder</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ZJYY_Ladder" title="http://w3id.org/kmo#ZJYY_Ladder">z j y y ladder</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Material">
+      <h3>material<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Material</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Concrete" title="http://w3id.org/kmo#Concrete">concrete</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#materialCondition" title="http://w3id.org/kmo#materialCondition">material condition</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#materialID" title="http://w3id.org/kmo#materialID">material i d</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">has experimental material</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasMaterialType" title="http://w3id.org/kmo#hasMaterialType">has material type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#case" title="http://w3id.org/kmo#case">case</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Organization">
+      <h3>organization<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Organization</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#build" title="http://w3id.org/kmo#build">build</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#manage" title="http://w3id.org/kmo#manage">manage</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#builtBy" title="http://w3id.org/kmo#builtBy">built by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#managedBy" title="http://w3id.org/kmo#managedBy">managed by</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#DMU" title="http://w3id.org/kmo#DMU">d m u</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#ReboundHammer">
+      <h3>rebound hammer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ReboundHammer</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ZJYY_ReboundHammer" title="http://w3id.org/kmo#ZJYY_ReboundHammer">z j y y rebound hammer</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#ReboundTest">
+      <h3>rebound test<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ReboundTest</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#case" title="http://w3id.org/kmo#case">case</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#UnderwaterReboundTest" title="http://w3id.org/kmo#UnderwaterReboundTest">underwater rebound test</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Standard">
+      <h3>standard<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Standard</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2002/07/owl#Thing"
+               target="_blank"
+               title="http://www.w3.org/2002/07/owl#Thing">thing</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">underwater inspection standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#applicableScope" title="http://w3id.org/kmo#applicableScope">applicable scope</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://w3id.org/kmo#guideTo" title="http://w3id.org/kmo#guideTo">guide to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">guided by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasCriterion" title="http://w3id.org/kmo#hasCriterion">has criterion</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#GB/T9138-2015" title="http://w3id.org/kmo#GB/T9138-2015">g b/ t9138 2015</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#JGJ55-2011" title="http://w3id.org/kmo#JGJ55-2011">j g j55 2011</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#UnderwaterInspectionStandard">
+      <h3>underwater inspection standard<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#UnderwaterInspectionStandard</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>16T15:44:37Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#GB/T50081-2019" title="http://w3id.org/kmo#GB/T50081-2019">g b/ t50081 2019</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#JGJ/T23-2011" title="http://w3id.org/kmo#JGJ/T23-2011">j g j/ t23 2011</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#JTG5120-2021" title="http://w3id.org/kmo#JTG5120-2021">j t g5120 2021</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://w3id.org/kmo#T/CECSG:J56-2019" title="http://w3id.org/kmo#T/CECSG:J56-2019">t/ c e c s g: j56 2019</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Wetsuit">
+      <h3>wetsuit<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Wetsuit</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#SBART_Wetsuit" title="http://w3id.org/kmo#SBART_Wetsuit">s b a r t wetsuit</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://w3id.org/kmo#build" title="http://w3id.org/kmo#build">
+            <span>build</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#builtBy" title="http://w3id.org/kmo#builtBy">
+            <span>built by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#conduct" title="http://w3id.org/kmo#conduct">
+            <span>conduct</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">
+            <span>conducted by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#guideTo" title="http://w3id.org/kmo#guideTo">
+            <span>guide to</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">
+            <span>guided by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#hasCriterion" title="http://w3id.org/kmo#hasCriterion">
+            <span>has criterion</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">
+            <span>has experimental material</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#hasMaterialType" title="http://w3id.org/kmo#hasMaterialType">
+            <span>has material type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#manage" title="http://w3id.org/kmo#manage">
+            <span>manage</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#managedBy" title="http://w3id.org/kmo#managedBy">
+            <span>managed by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">
+            <span>need equipment</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://w3id.org/kmo#build">
+      <h3>build<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#build</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#builtBy" title="http://w3id.org/kmo#builtBy">built by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#builtBy">
+      <h3>built by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#builtBy</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#build" title="http://w3id.org/kmo#build">build</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#conduct">
+      <h3>conduct<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#conduct</p>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#conductedBy">
+      <h3>conducted by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#conductedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#conduct" title="http://w3id.org/kmo#conduct">conduct</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#guideTo">
+      <h3>guide to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#guideTo</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">guided by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#guidedBy">
+      <h3>guided by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#guidedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#guideTo" title="http://w3id.org/kmo#guideTo">guide to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#hasCriterion">
+      <h3>has criterion<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#hasCriterion</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#hasExperimentalMaterial">
+      <h3>has experimental material<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#hasExperimentalMaterial</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#hasMaterialType">
+      <h3>has material type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#hasMaterialType</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topObjectProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#manage">
+      <h3>manage<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#manage</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#managedBy" title="http://w3id.org/kmo#managedBy">managed by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#managedBy">
+      <h3>managed by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#managedBy</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#manage" title="http://w3id.org/kmo#manage">manage</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#needEquipment">
+      <h3>need equipment<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#needEquipment</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://w3id.org/kmo#address" title="http://w3id.org/kmo#address">
+            <span>address</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#angle" title="http://w3id.org/kmo#angle">
+            <span>angle</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#applicableScope" title="http://w3id.org/kmo#applicableScope">
+            <span>applicable scope</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#brand" title="http://w3id.org/kmo#brand">
+            <span>brand</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#briidgeID" title="http://w3id.org/kmo#briidgeID">
+            <span>briidge i d</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#date" title="http://w3id.org/kmo#date">
+            <span>date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#designStrength" title="http://w3id.org/kmo#designStrength">
+            <span>design strength</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#fcu" title="http://w3id.org/kmo#fcu">
+            <span>fcu</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#isBottomSurface" title="http://w3id.org/kmo#isBottomSurface">
+            <span>is bottom surface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#isHorizontal" title="http://w3id.org/kmo#isHorizontal">
+            <span>is horizontal</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#isSideSurface" title="http://w3id.org/kmo#isSideSurface">
+            <span>is side surface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#isTopSurface" title="http://w3id.org/kmo#isTopSurface">
+            <span>is top surface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#materialCondition" title="http://w3id.org/kmo#materialCondition">
+            <span>material condition</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#materialID" title="http://w3id.org/kmo#materialID">
+            <span>material i d</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#maxSpanLength" title="http://w3id.org/kmo#maxSpanLength">
+            <span>max span length</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#maxWidth" title="http://w3id.org/kmo#maxWidth">
+            <span>max width</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">
+            <span>name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#phone" title="http://w3id.org/kmo#phone">
+            <span>phone</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#R" title="http://w3id.org/kmo#R">
+            <span>r</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Raa" title="http://w3id.org/kmo#Raa">
+            <span>raa</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rab" title="http://w3id.org/kmo#Rab">
+            <span>rab</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rah" title="http://w3id.org/kmo#Rah">
+            <span>rah</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rat" title="http://w3id.org/kmo#Rat">
+            <span>rat</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">
+            <span>release date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rh" title="http://w3id.org/kmo#Rh">
+            <span>rh</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rm2" title="http://w3id.org/kmo#Rm2">
+            <span>rm2</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rm3" title="http://w3id.org/kmo#Rm3">
+            <span>rm3</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rm4" title="http://w3id.org/kmo#Rm4">
+            <span>rm4</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#Rn" title="http://w3id.org/kmo#Rn">
+            <span>rn</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#totalLength" title="http://w3id.org/kmo#totalLength">
+            <span>total length</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#waterDepth" title="http://w3id.org/kmo#waterDepth">
+            <span>water depth</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#weight" title="http://w3id.org/kmo#weight">
+            <span>weight</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://w3id.org/kmo#address">
+      <h3>address<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#address</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#angle">
+      <h3>angle<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#angle</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#applicableScope">
+      <h3>applicable scope<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#applicableScope</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#brand">
+      <h3>brand<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#brand</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#briidgeID">
+      <h3>briidge i d<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#briidgeID</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#date">
+      <h3>date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#date</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#designStrength">
+      <h3>design strength<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#designStrength</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#fcu">
+      <h3>fcu<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#fcu</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#isBottomSurface">
+      <h3>is bottom surface<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#isBottomSurface</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#isHorizontal">
+      <h3>is horizontal<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#isHorizontal</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#isSideSurface">
+      <h3>is side surface<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#isSideSurface</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#isTopSurface">
+      <h3>is top surface<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#isTopSurface</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#materialCondition">
+      <h3>material condition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#materialCondition</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#materialID">
+      <h3>material i d<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#materialID</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#maxSpanLength">
+      <h3>max span length<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#maxSpanLength</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#maxWidth">
+      <h3>max width<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#maxWidth</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#name">
+      <h3>name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#name</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#phone">
+      <h3>phone<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#phone</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#R">
+      <h3>r<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#R</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Raa">
+      <h3>raa<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Raa</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rab">
+      <h3>rab<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rab</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rah">
+      <h3>rah<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rah</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rat">
+      <h3>rat<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rat</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#releaseDate">
+      <h3>release date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#releaseDate</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rh">
+      <h3>rh<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rh</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#double"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#double">double</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rm2">
+      <h3>rm2<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rm2</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rm3">
+      <h3>rm3<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rm3</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rm4">
+      <h3>rm4<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rm4</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#Rn">
+      <h3>rn<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#Rn</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#totalLength">
+      <h3>total length<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#totalLength</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Bridge" title="http://w3id.org/kmo#Bridge">bridge</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#waterDepth">
+      <h3>water depth<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#waterDepth</p>
+      <div class="comment">
+         <span class="markdown">检测水深（0-10m）</span>
+      </div>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#weight">
+      <h3>weight<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#weight</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://w3id.org/kmo#case" title="http://w3id.org/kmo#case">
+            <span>case</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#DMU" title="http://w3id.org/kmo#DMU">
+            <span>d m u</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#GB/T50081-2019" title="http://w3id.org/kmo#GB/T50081-2019">
+            <span>g b/ t50081 2019</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#GB/T9138-2015" title="http://w3id.org/kmo#GB/T9138-2015">
+            <span>g b/ t9138 2015</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#JGJ/T23-2011" title="http://w3id.org/kmo#JGJ/T23-2011">
+            <span>j g j/ t23 2011</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#JGJ55-2011" title="http://w3id.org/kmo#JGJ55-2011">
+            <span>j g j55 2011</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#JTG5120-2021" title="http://w3id.org/kmo#JTG5120-2021">
+            <span>j t g5120 2021</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine"
+            title="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">
+            <span>microcomputer controlled electro hydraulic servo testing machine</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#SBART_Wetsuit" title="http://w3id.org/kmo#SBART_Wetsuit">
+            <span>s b a r t wetsuit</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#T/CECSG:J56-2019" title="http://w3id.org/kmo#T/CECSG:J56-2019">
+            <span>t/ c e c s g: j56 2019</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#UnderwaterReboundTest" title="http://w3id.org/kmo#UnderwaterReboundTest">
+            <span>underwater rebound test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#UniaxialCompressiveStrengthTest"
+            title="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">
+            <span>uniaxial compressive strength test</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#ZJYY_Ladder" title="http://w3id.org/kmo#ZJYY_Ladder">
+            <span>z j y y ladder</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#ZJYY_ReboundHammer" title="http://w3id.org/kmo#ZJYY_ReboundHammer">
+            <span>z j y y rebound hammer</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://w3id.org/kmo#case">
+      <h3>case<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#case</p>
+      <div class="comment">
+         <span class="markdown">In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. 
+The original rebound value is 42.
+The design strength of concrete is 40.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#CompressiveStrengthTest" title="http://w3id.org/kmo#CompressiveStrengthTest">compressive strength test</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#Material" title="http://w3id.org/kmo#Material">material</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#ReboundTest" title="http://w3id.org/kmo#ReboundTest">rebound test</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#R" title="http://w3id.org/kmo#R">r</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"32.4"^^<a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#designStrength" title="http://w3id.org/kmo#designStrength">design strength</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"30"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#isHorizontal" title="http://w3id.org/kmo#isHorizontal">is horizontal</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#isSideSurface" title="http://w3id.org/kmo#isSideSurface">is side surface</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"true"^^<a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="http://w3id.org/kmo#w0"
+               target="_blank"
+               title="http://w3id.org/kmo#w0">w0</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"24.05"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="http://w3id.org/kmo#w1"
+               target="_blank"
+               title="http://w3id.org/kmo#w1">w1</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"-1.01"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="http://w3id.org/kmo#w2"
+               target="_blank"
+               title="http://w3id.org/kmo#w2">w2</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.04"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#waterDepth" title="http://w3id.org/kmo#waterDepth">water depth</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"3.76"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#DMU">
+      <h3>d m u<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#DMU</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Organization" title="http://w3id.org/kmo#Organization">organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#GB/T50081-2019">
+      <h3>g b/ t50081 2019<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#GB/T50081-2019</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>13T15:53:50Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">underwater inspection standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese: 混凝土物理力学性能试验方法标准;
+English: Standard for test methods of physical and mechanical performance of concretes;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2019-06-19T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#GB/T9138-2015">
+      <h3>g b/ t9138 2015<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#GB/T9138-2015</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>13T14:36:05Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese:回弹仪;
+English: Rebound test hammer;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2015-05-15T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#JGJ/T23-2011">
+      <h3>j g j/ t23 2011<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#JGJ/T23-2011</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>13T15:44:59Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">underwater inspection standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese:回弹法检测混凝土抗压强度技术规程;
+English:Technical specifications for inspecting concrete compressive strength by rebound method;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2011-05-03T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#JGJ55-2011">
+      <h3>j g j55 2011<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#JGJ55-2011</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>13T15:53:11Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese: 普通混凝土配合比设计规程;
+English: Specification for mix proportion design of ordinary concrete;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2011-04-22T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#JTG5120-2021">
+      <h3>j t g5120 2021<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#JTG5120-2021</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">underwater inspection standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#applicableScope" title="http://w3id.org/kmo#applicableScope">applicable scope</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Highway Bridges and Culverts"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese:公路桥涵养护规范;
+English:Specifications for Maintenance of Highway Bridges and Culverts;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2021-08-09T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">
+      <h3>microcomputer controlled electro hydraulic servo testing machine<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#CompressiveStrengthTestingMachine"
+               title="http://w3id.org/kmo#CompressiveStrengthTestingMachine">compressive strength testing machine</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#SBART_Wetsuit">
+      <h3>s b a r t wetsuit<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#SBART_Wetsuit</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Wetsuit" title="http://w3id.org/kmo#Wetsuit">wetsuit</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#T/CECSG:J56-2019">
+      <h3>t/ c e c s g: j56 2019<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#T/CECSG:J56-2019</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#UnderwaterInspectionStandard" title="http://w3id.org/kmo#UnderwaterInspectionStandard">underwater inspection standard</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#applicableScope" title="http://w3id.org/kmo#applicableScope">applicable scope</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Highway Bridges"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#name" title="http://w3id.org/kmo#name">name</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"Chinese:公路桥梁水下构件检测技术规程;
+English:Technical Regulations for Inspection of Underwater Components of Highway Bridges;"</span>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#releaseDate" title="http://w3id.org/kmo#releaseDate">release date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2019-08-26T00:00:00"^^<a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#UnderwaterReboundTest">
+      <h3>underwater rebound test<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#UnderwaterReboundTest</p>
+      <div class="comment">
+         <span class="markdown">When the value of the angle is positive, the corrected value is negative, and vice versa; 
+The closer the angle is to the horizontal, the smaller the absolute value of the corrected value; 
+When the test area is a top surface, the corrected value is positive;
+When the test area is bottom surface, the corrected value is negative;
+The deeper the water is, the larger the corrected value is;
+The larger the measured rebound value is, the smaller the absolute value of the corrected value is.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#ReboundTest" title="http://w3id.org/kmo#ReboundTest">rebound test</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#DMU" title="http://w3id.org/kmo#DMU">d m u</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#SBART_Wetsuit" title="http://w3id.org/kmo#SBART_Wetsuit">s b a r t wetsuit</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#ZJYY_Ladder" title="http://w3id.org/kmo#ZJYY_Ladder">z j y y ladder</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#ZJYY_ReboundHammer" title="http://w3id.org/kmo#ZJYY_ReboundHammer">z j y y rebound hammer</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#date" title="http://w3id.org/kmo#date">date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2022-06"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">
+      <h3>uniaxial compressive strength test<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#UniaxialCompressiveStrengthTest</p>
+      <div class="comment">
+         <span class="markdown">Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#CompressiveStrengthTest" title="http://w3id.org/kmo#CompressiveStrengthTest">compressive strength test</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#DMU" title="http://w3id.org/kmo#DMU">d m u</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine"
+               title="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">microcomputer controlled electro hydraulic servo testing machine</a>
+         </dd>
+         <dd>
+            <a href="#http://w3id.org/kmo#date" title="http://w3id.org/kmo#date">date</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"2022-06"</span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#ZJYY_Ladder">
+      <h3>z j y y ladder<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ZJYY_Ladder</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#Ladder" title="http://w3id.org/kmo#Ladder">ladder</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#ZJYY_ReboundHammer">
+      <h3>z j y y rebound hammer<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ZJYY_ReboundHammer</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ReboundHammer" title="http://w3id.org/kmo#ReboundHammer">rebound hammer</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/kmo#"
+     xml:base="http://w3id.org/kmo"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:kmo="http://w3id.org/kmo#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://w3id.org/kmo">
+        <rdfs:comment>Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/kmo#build -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#build">
+        <owl:inverseOf rdf:resource="http://w3id.org/kmo#builtBy"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Organization"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Bridge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#builtBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#builtBy">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#conduct -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#conduct">
+        <owl:inverseOf rdf:resource="http://w3id.org/kmo#conductedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#conductedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#conductedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#guideTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#guideTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://w3id.org/kmo#guidedBy"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Standard"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Experimentation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#guidedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#guidedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Standard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#hasCriterion -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#hasCriterion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Standard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#hasExperimentalMaterial -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#hasExperimentalMaterial">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#hasMaterialType -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#hasMaterialType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Material"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#manage -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#manage">
+        <owl:inverseOf rdf:resource="http://w3id.org/kmo#managedBy"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Organization"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Bridge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#managedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#managedBy">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#needEquipment -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#needEquipment">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#Equipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/kmo#R -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#R">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Ra -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Ra"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Raa -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Raa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rab -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rab">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rah -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rah">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rb -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rb"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rh -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rh">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rm1 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rm1"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rm2 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rm2">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rm3 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rm3">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rm4 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rm4">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rma1 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rma1"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rma2 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rma2"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rma3 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rma3"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rma4 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rma4"/>
+    
+
+
+    <!-- http://w3id.org/kmo#Rn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#Rt -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#Rt"/>
+    
+
+
+    <!-- http://w3id.org/kmo#address -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#address">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#angle -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#angle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#applicableScope -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#applicableScope">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Standard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#brand -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#brand">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#briidgeID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#briidgeID">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#date -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#date">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#designStrength -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#designStrength">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#experimentationID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#experimentationID"/>
+    
+
+
+    <!-- http://w3id.org/kmo#fcu -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#fcu">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#isBottomSurface -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#isBottomSurface">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#isHorizontal -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#isHorizontal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#isSideSurface -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#isSideSurface">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#isTopSurface -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#isTopSurface">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#materialCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#materialCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#materialID -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#materialID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#maxSpanLength -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#maxSpanLength">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#maxWidth -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#maxWidth">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#phone -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#phone">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#releaseDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#releaseDate">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Standard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#totalLength -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#totalLength">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Bridge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#w0 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#w0"/>
+    
+
+
+    <!-- http://w3id.org/kmo#w1 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#w1"/>
+    
+
+
+    <!-- http://w3id.org/kmo#w2 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#w2"/>
+    
+
+
+    <!-- http://w3id.org/kmo#w3 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#w3"/>
+    
+
+
+    <!-- http://w3id.org/kmo#waterDepth -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#waterDepth">
+        <rdfs:comment>检测水深（0-10m）</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/kmo#weight -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#weight">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/kmo#Bridge -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#CompressiveStrengthTest -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#CompressiveStrengthTest">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#needEquipment"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#CompressiveStrengthTestingMachine"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#CompressiveStrengthTestingMachine -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#CompressiveStrengthTestingMachine">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Concrete -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Concrete">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Equipment -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Experimentation -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Experimentation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#experimentationID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Ladder -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Ladder">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Material -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Material">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#designStrength"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#materialID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Organization -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#ReboundHammer -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#ReboundHammer">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#ReboundTest -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#ReboundTest">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#needEquipment"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#Ladder"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#needEquipment"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#ReboundHammer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#needEquipment"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#Wetsuit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Standard -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Standard">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#UnderwaterInspectionStandard -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#UnderwaterInspectionStandard">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Standard"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#guideTo"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#CompressiveStrengthTest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/kmo#guideTo"/>
+                <owl:someValuesFrom rdf:resource="http://w3id.org/kmo#ReboundTest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-16T15:44:37Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#Wetsuit -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#Wetsuit">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/kmo#DMU -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#DMU">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Organization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#JGJ55-2011 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#JGJ55-2011">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Standard"/>
+        <name>Chinese: 普通混凝土配合比设计规程;
+English: Specification for mix proportion design of ordinary concrete;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-04-22T00:00:00</releaseDate>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-13T15:53:11Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#JTG5120-2021 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#JTG5120-2021">
+        <rdf:type rdf:resource="http://w3id.org/kmo#UnderwaterInspectionStandard"/>
+        <applicableScope>Highway Bridges and Culverts</applicableScope>
+        <name>Chinese:公路桥涵养护规范;
+English:Specifications for Maintenance of Highway Bridges and Culverts;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-08-09T00:00:00</releaseDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine">
+        <rdf:type rdf:resource="http://w3id.org/kmo#CompressiveStrengthTestingMachine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#SBART_Wetsuit -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#SBART_Wetsuit">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Wetsuit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#UnderwaterReboundTest -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#UnderwaterReboundTest">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdf:type rdf:resource="http://w3id.org/kmo#ReboundTest"/>
+        <conductedBy rdf:resource="http://w3id.org/kmo#DMU"/>
+        <needEquipment rdf:resource="http://w3id.org/kmo#SBART_Wetsuit"/>
+        <needEquipment rdf:resource="http://w3id.org/kmo#ZJYY_Ladder"/>
+        <needEquipment rdf:resource="http://w3id.org/kmo#ZJYY_ReboundHammer"/>
+        <date>2022-06</date>
+        <rdfs:comment>When the value of the angle is positive, the corrected value is negative, and vice versa; 
+The closer the angle is to the horizontal, the smaller the absolute value of the corrected value; 
+When the test area is a top surface, the corrected value is positive;
+When the test area is bottom surface, the corrected value is negative;
+The deeper the water is, the larger the corrected value is;
+The larger the measured rebound value is, the smaller the absolute value of the corrected value is.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#UniaxialCompressiveStrengthTest -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#UniaxialCompressiveStrengthTest">
+        <rdf:type rdf:resource="http://w3id.org/kmo#CompressiveStrengthTest"/>
+        <rdf:type rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <conductedBy rdf:resource="http://w3id.org/kmo#DMU"/>
+        <needEquipment rdf:resource="http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine"/>
+        <date>2022-06</date>
+        <rdfs:comment>Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#ZJYY_Ladder -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#ZJYY_Ladder">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Ladder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#ZJYY_ReboundHammer -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#ZJYY_ReboundHammer">
+        <rdf:type rdf:resource="http://w3id.org/kmo#ReboundHammer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#case -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#case">
+        <rdf:type rdf:resource="http://w3id.org/kmo#CompressiveStrengthTest"/>
+        <rdf:type rdf:resource="http://w3id.org/kmo#Material"/>
+        <rdf:type rdf:resource="http://w3id.org/kmo#ReboundTest"/>
+        <R rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.4</R>
+        <designStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</designStrength>
+        <isHorizontal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isHorizontal>
+        <isSideSurface rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isSideSurface>
+        <w0 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">24.05</w0>
+        <w1 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-1.01</w1>
+        <w2 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</w2>
+        <waterDepth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.76</waterDepth>
+        <rdfs:comment>In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. 
+The original rebound value is 42.
+The design strength of concrete is 40.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#GB/T50081-2019 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#GB/T50081-2019">
+        <rdf:type rdf:resource="http://w3id.org/kmo#UnderwaterInspectionStandard"/>
+        <name>Chinese: 混凝土物理力学性能试验方法标准;
+English: Standard for test methods of physical and mechanical performance of concretes;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-06-19T00:00:00</releaseDate>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-13T15:53:50Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#GB/T9138-2015 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#GB/T9138-2015">
+        <rdf:type rdf:resource="http://w3id.org/kmo#Standard"/>
+        <name>Chinese:回弹仪;
+English: Rebound test hammer;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-05-15T00:00:00</releaseDate>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-13T14:36:05Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#JGJ/T23-2011 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#JGJ/T23-2011">
+        <rdf:type rdf:resource="http://w3id.org/kmo#UnderwaterInspectionStandard"/>
+        <name>Chinese:回弹法检测混凝土抗压强度技术规程;
+English:Technical specifications for inspecting concrete compressive strength by rebound method;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-05-03T00:00:00</releaseDate>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-13T15:44:59Z</dc:date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/kmo#T/CECSG:J56-2019 -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/kmo#T/CECSG:J56-2019">
+        <rdf:type rdf:resource="http://w3id.org/kmo#UnderwaterInspectionStandard"/>
+        <applicableScope>Highway Bridges</applicableScope>
+        <name>Chinese:公路桥梁水下构件检测技术规程;
+English:Technical Regulations for Inspection of Underwater Components of Highway Bridges;</name>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-26T00:00:00</releaseDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://w3id.org/kmo#isBottomSurface"/>
+            <rdf:Description rdf:about="http://w3id.org/kmo#isSideSurface"/>
+            <rdf:Description rdf:about="http://w3id.org/kmo#isTopSurface"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

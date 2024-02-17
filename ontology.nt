@@ -1,0 +1,526 @@
+<http://w3id.org/kmo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/kmo> <http://www.w3.org/2000/01/rdf-schema#comment> "Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/kmo#build
+<http://w3id.org/kmo#build> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#build> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/kmo#builtBy> .
+<http://w3id.org/kmo#build> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Organization> .
+<http://w3id.org/kmo#build> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Bridge> .
+# 
+# http://w3id.org/kmo#builtBy
+<http://w3id.org/kmo#builtBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#builtBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#builtBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Organization> .
+# 
+# http://w3id.org/kmo#conduct
+<http://w3id.org/kmo#conduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#conduct> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/kmo#conductedBy> .
+# 
+# http://w3id.org/kmo#conductedBy
+<http://w3id.org/kmo#conductedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#conductedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/kmo#conductedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#conductedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Organization> .
+# 
+# http://w3id.org/kmo#guideTo
+<http://w3id.org/kmo#guideTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#guideTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/kmo#guideTo> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/kmo#guidedBy> .
+<http://w3id.org/kmo#guideTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#guideTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Experimentation> .
+# 
+# http://w3id.org/kmo#guidedBy
+<http://w3id.org/kmo#guidedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#guidedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#guidedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Standard> .
+# 
+# http://w3id.org/kmo#hasCriterion
+<http://w3id.org/kmo#hasCriterion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#hasCriterion> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/kmo#hasCriterion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#hasCriterion> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Standard> .
+# 
+# http://w3id.org/kmo#hasExperimentalMaterial
+<http://w3id.org/kmo#hasExperimentalMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#hasExperimentalMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/kmo#hasExperimentalMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#hasExperimentalMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Material> .
+# 
+# http://w3id.org/kmo#hasMaterialType
+<http://w3id.org/kmo#hasMaterialType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#hasMaterialType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://w3id.org/kmo#hasMaterialType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#hasMaterialType> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Material> .
+# 
+# http://w3id.org/kmo#manage
+<http://w3id.org/kmo#manage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#manage> <http://www.w3.org/2002/07/owl#inverseOf> <http://w3id.org/kmo#managedBy> .
+<http://w3id.org/kmo#manage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Organization> .
+<http://w3id.org/kmo#manage> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Bridge> .
+# 
+# http://w3id.org/kmo#managedBy
+<http://w3id.org/kmo#managedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#managedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#managedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Organization> .
+# 
+# http://w3id.org/kmo#needEquipment
+<http://w3id.org/kmo#needEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/kmo#needEquipment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#needEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/kmo#Equipment> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/kmo#R
+<http://w3id.org/kmo#R> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#R> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Ra
+<http://w3id.org/kmo#Ra> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Raa
+<http://w3id.org/kmo#Raa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Raa> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rab
+<http://w3id.org/kmo#Rab> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rab> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rah
+<http://w3id.org/kmo#Rah> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rah> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rat
+<http://w3id.org/kmo#Rat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rat> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rb
+<http://w3id.org/kmo#Rb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rh
+<http://w3id.org/kmo#Rh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rh> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+# 
+# http://w3id.org/kmo#Rm1
+<http://w3id.org/kmo#Rm1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rm2
+<http://w3id.org/kmo#Rm2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rm2> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rm3
+<http://w3id.org/kmo#Rm3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rm3> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rm4
+<http://w3id.org/kmo#Rm4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rm4> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rma1
+<http://w3id.org/kmo#Rma1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rma2
+<http://w3id.org/kmo#Rma2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rma3
+<http://w3id.org/kmo#Rma3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rma4
+<http://w3id.org/kmo#Rma4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#Rn
+<http://w3id.org/kmo#Rn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#Rn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#Rt
+<http://w3id.org/kmo#Rt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#address
+<http://w3id.org/kmo#address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#address> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#address> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#angle
+<http://w3id.org/kmo#angle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#angle> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#applicableScope
+<http://w3id.org/kmo#applicableScope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#applicableScope> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#applicableScope> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#brand
+<http://w3id.org/kmo#brand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#brand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Equipment> .
+<http://w3id.org/kmo#brand> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#briidgeID
+<http://w3id.org/kmo#briidgeID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#briidgeID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#briidgeID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#date
+<http://w3id.org/kmo#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#designStrength
+<http://w3id.org/kmo#designStrength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#designStrength> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#experimentationID
+<http://w3id.org/kmo#experimentationID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#fcu
+<http://w3id.org/kmo#fcu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#fcu> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://w3id.org/kmo#isBottomSurface
+<http://w3id.org/kmo#isBottomSurface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#isBottomSurface> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#isBottomSurface> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://w3id.org/kmo#isHorizontal
+<http://w3id.org/kmo#isHorizontal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#isHorizontal> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#isHorizontal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://w3id.org/kmo#isSideSurface
+<http://w3id.org/kmo#isSideSurface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#isSideSurface> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#isSideSurface> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://w3id.org/kmo#isTopSurface
+<http://w3id.org/kmo#isTopSurface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#isTopSurface> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#isTopSurface> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://w3id.org/kmo#materialCondition
+<http://w3id.org/kmo#materialCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#materialCondition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#materialCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Material> .
+<http://w3id.org/kmo#materialCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#materialID
+<http://w3id.org/kmo#materialID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#materialID> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#materialID> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Material> .
+<http://w3id.org/kmo#materialID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#maxSpanLength
+<http://w3id.org/kmo#maxSpanLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#maxSpanLength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#maxSpanLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://w3id.org/kmo#maxWidth
+<http://w3id.org/kmo#maxWidth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#maxWidth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#maxWidth> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://w3id.org/kmo#name
+<http://w3id.org/kmo#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#phone
+<http://w3id.org/kmo#phone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#phone> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://w3id.org/kmo#phone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/kmo#releaseDate
+<http://w3id.org/kmo#releaseDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#releaseDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#releaseDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#totalLength
+<http://w3id.org/kmo#totalLength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#totalLength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Bridge> .
+<http://w3id.org/kmo#totalLength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://w3id.org/kmo#w0
+<http://w3id.org/kmo#w0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#w1
+<http://w3id.org/kmo#w1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#w2
+<http://w3id.org/kmo#w2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#w3
+<http://w3id.org/kmo#w3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://w3id.org/kmo#waterDepth
+<http://w3id.org/kmo#waterDepth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#waterDepth> <http://www.w3.org/2000/01/rdf-schema#comment> "检测水深（0-10m）" .
+# 
+# http://w3id.org/kmo#weight
+<http://w3id.org/kmo#weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/kmo#weight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/kmo#Equipment> .
+<http://w3id.org/kmo#weight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/kmo#Bridge
+<http://w3id.org/kmo#Bridge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Bridge> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://w3id.org/kmo#CompressiveStrengthTest
+<http://w3id.org/kmo#CompressiveStrengthTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#CompressiveStrengthTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#CompressiveStrengthTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#CompressiveStrengthTestingMachine> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#needEquipment> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://w3id.org/kmo#CompressiveStrengthTestingMachine
+<http://w3id.org/kmo#CompressiveStrengthTestingMachine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#CompressiveStrengthTestingMachine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Equipment> .
+# 
+# http://w3id.org/kmo#Concrete
+<http://w3id.org/kmo#Concrete> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Concrete> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Material> .
+# 
+# http://w3id.org/kmo#Equipment
+<http://w3id.org/kmo#Equipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Equipment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://w3id.org/kmo#Experimentation
+<http://w3id.org/kmo#Experimentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Experimentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/kmo#Experimentation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#experimentationID> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://w3id.org/kmo#Ladder
+<http://w3id.org/kmo#Ladder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Ladder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Equipment> .
+# 
+# http://w3id.org/kmo#Material
+<http://w3id.org/kmo#Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://w3id.org/kmo#Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#int> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#designStrength> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/kmo#Material> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#materialID> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://w3id.org/kmo#Organization
+<http://w3id.org/kmo#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://w3id.org/kmo#ReboundHammer
+<http://w3id.org/kmo#ReboundHammer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#ReboundHammer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Equipment> .
+# 
+# http://w3id.org/kmo#ReboundTest
+<http://w3id.org/kmo#ReboundTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#ReboundTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#ReboundTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#Ladder> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#needEquipment> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/kmo#ReboundTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#ReboundHammer> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#needEquipment> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/kmo#ReboundTest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#Wetsuit> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#needEquipment> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://w3id.org/kmo#Standard
+<http://w3id.org/kmo#Standard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Standard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://w3id.org/kmo#UnderwaterInspectionStandard
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#CompressiveStrengthTest> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#guideTo> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://w3id.org/kmo#ReboundTest> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/kmo#guideTo> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://purl.org/dc/elements/1.1/creator> "DMU & CU" .
+<http://w3id.org/kmo#UnderwaterInspectionStandard> <http://purl.org/dc/elements/1.1/date> "2024-02-16T15:44:37Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#Wetsuit
+<http://w3id.org/kmo#Wetsuit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/kmo#Wetsuit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/kmo#Equipment> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/kmo#DMU
+<http://w3id.org/kmo#DMU> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#DMU> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Organization> .
+# 
+# http://w3id.org/kmo#JGJ55-2011
+<http://w3id.org/kmo#JGJ55-2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#JGJ55-2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#JGJ55-2011> <http://w3id.org/kmo#name> "Chinese: 普通混凝土配合比设计规程;\nEnglish: Specification for mix proportion design of ordinary concrete;" .
+<http://w3id.org/kmo#JGJ55-2011> <http://w3id.org/kmo#releaseDate> "2011-04-22T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/kmo#JGJ55-2011> <http://purl.org/dc/elements/1.1/creator> "DMU & CU" .
+<http://w3id.org/kmo#JGJ55-2011> <http://purl.org/dc/elements/1.1/date> "2024-02-13T15:53:11Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#JTG5120-2021
+<http://w3id.org/kmo#JTG5120-2021> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#JTG5120-2021> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#UnderwaterInspectionStandard> .
+<http://w3id.org/kmo#JTG5120-2021> <http://w3id.org/kmo#applicableScope> "Highway Bridges and Culverts" .
+<http://w3id.org/kmo#JTG5120-2021> <http://w3id.org/kmo#name> "Chinese:公路桥涵养护规范;\nEnglish:Specifications for Maintenance of Highway Bridges and Culverts;" .
+<http://w3id.org/kmo#JTG5120-2021> <http://w3id.org/kmo#releaseDate> "2021-08-09T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine
+<http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#CompressiveStrengthTestingMachine> .
+# 
+# http://w3id.org/kmo#SBART_Wetsuit
+<http://w3id.org/kmo#SBART_Wetsuit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#SBART_Wetsuit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Wetsuit> .
+# 
+# http://w3id.org/kmo#UnderwaterReboundTest
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#ReboundTest> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://w3id.org/kmo#conductedBy> <http://w3id.org/kmo#DMU> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://w3id.org/kmo#needEquipment> <http://w3id.org/kmo#SBART_Wetsuit> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://w3id.org/kmo#needEquipment> <http://w3id.org/kmo#ZJYY_Ladder> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://w3id.org/kmo#needEquipment> <http://w3id.org/kmo#ZJYY_ReboundHammer> .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://w3id.org/kmo#date> "2022-06" .
+<http://w3id.org/kmo#UnderwaterReboundTest> <http://www.w3.org/2000/01/rdf-schema#comment> "When the value of the angle is positive, the corrected value is negative, and vice versa; \nThe closer the angle is to the horizontal, the smaller the absolute value of the corrected value; \nWhen the test area is a top surface, the corrected value is positive;\nWhen the test area is bottom surface, the corrected value is negative;\nThe deeper the water is, the larger the corrected value is;\nThe larger the measured rebound value is, the smaller the absolute value of the corrected value is." .
+# 
+# http://w3id.org/kmo#UniaxialCompressiveStrengthTest
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#CompressiveStrengthTest> .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Experimentation> .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://w3id.org/kmo#conductedBy> <http://w3id.org/kmo#DMU> .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://w3id.org/kmo#needEquipment> <http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine> .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://w3id.org/kmo#date> "2022-06" .
+<http://w3id.org/kmo#UniaxialCompressiveStrengthTest> <http://www.w3.org/2000/01/rdf-schema#comment> "Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment." .
+# 
+# http://w3id.org/kmo#ZJYY_Ladder
+<http://w3id.org/kmo#ZJYY_Ladder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#ZJYY_Ladder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Ladder> .
+# 
+# http://w3id.org/kmo#ZJYY_ReboundHammer
+<http://w3id.org/kmo#ZJYY_ReboundHammer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#ZJYY_ReboundHammer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#ReboundHammer> .
+# 
+# http://w3id.org/kmo#case
+<http://w3id.org/kmo#case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#CompressiveStrengthTest> .
+<http://w3id.org/kmo#case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Material> .
+<http://w3id.org/kmo#case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#ReboundTest> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#R> "32.4"^^<http://www.w3.org/2001/XMLSchema#float> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#designStrength> "30"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#isHorizontal> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#isSideSurface> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#w0> "24.05"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#w1> "-1.01"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#w2> "0.04"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://w3id.org/kmo#case> <http://w3id.org/kmo#waterDepth> "3.76"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://w3id.org/kmo#case> <http://www.w3.org/2000/01/rdf-schema#comment> "In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. \nThe original rebound value is 42.\nThe design strength of concrete is 40." .
+# 
+# http://w3id.org/kmo#GB/T50081-2019
+<http://w3id.org/kmo#GB/T50081-2019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#GB/T50081-2019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#UnderwaterInspectionStandard> .
+<http://w3id.org/kmo#GB/T50081-2019> <http://w3id.org/kmo#name> "Chinese: 混凝土物理力学性能试验方法标准;\nEnglish: Standard for test methods of physical and mechanical performance of concretes;" .
+<http://w3id.org/kmo#GB/T50081-2019> <http://w3id.org/kmo#releaseDate> "2019-06-19T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/kmo#GB/T50081-2019> <http://purl.org/dc/elements/1.1/creator> "DMU & CU" .
+<http://w3id.org/kmo#GB/T50081-2019> <http://purl.org/dc/elements/1.1/date> "2024-02-13T15:53:50Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#GB/T9138-2015
+<http://w3id.org/kmo#GB/T9138-2015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#GB/T9138-2015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#Standard> .
+<http://w3id.org/kmo#GB/T9138-2015> <http://w3id.org/kmo#name> "Chinese:回弹仪;\nEnglish: Rebound test hammer;" .
+<http://w3id.org/kmo#GB/T9138-2015> <http://w3id.org/kmo#releaseDate> "2015-05-15T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/kmo#GB/T9138-2015> <http://purl.org/dc/elements/1.1/creator> "DMU & CU" .
+<http://w3id.org/kmo#GB/T9138-2015> <http://purl.org/dc/elements/1.1/date> "2024-02-13T14:36:05Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#JGJ/T23-2011
+<http://w3id.org/kmo#JGJ/T23-2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#JGJ/T23-2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#UnderwaterInspectionStandard> .
+<http://w3id.org/kmo#JGJ/T23-2011> <http://w3id.org/kmo#name> "Chinese:回弹法检测混凝土抗压强度技术规程;\nEnglish:Technical specifications for inspecting concrete compressive strength by rebound method;" .
+<http://w3id.org/kmo#JGJ/T23-2011> <http://w3id.org/kmo#releaseDate> "2011-05-03T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://w3id.org/kmo#JGJ/T23-2011> <http://purl.org/dc/elements/1.1/creator> "DMU & CU" .
+<http://w3id.org/kmo#JGJ/T23-2011> <http://purl.org/dc/elements/1.1/date> "2024-02-13T15:44:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://w3id.org/kmo#T/CECSG:J56-2019
+<http://w3id.org/kmo#T/CECSG:J56-2019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/kmo#T/CECSG:J56-2019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/kmo#UnderwaterInspectionStandard> .
+<http://w3id.org/kmo#T/CECSG:J56-2019> <http://w3id.org/kmo#applicableScope> "Highway Bridges" .
+<http://w3id.org/kmo#T/CECSG:J56-2019> <http://w3id.org/kmo#name> "Chinese:公路桥梁水下构件检测技术规程;\nEnglish:Technical Regulations for Inspection of Underwater Components of Highway Bridges;" .
+<http://w3id.org/kmo#T/CECSG:J56-2019> <http://w3id.org/kmo#releaseDate> "2019-08-26T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointProperties> .
+_:genid10 <http://www.w3.org/2002/07/owl#members> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/kmo#isTopSurface> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/kmo#isSideSurface> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/kmo#isBottomSurface> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

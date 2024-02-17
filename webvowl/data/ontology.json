@@ -1,0 +1,1811 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://w3id.org/kmo", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://w3id.org/kmo",
+    "comments" : {
+      "undefined" : "Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML."
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "5",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "116",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "121",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "123",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "0",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "25",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "26",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "28",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "33",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#Experimentation",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Experimentation"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#UniaxialCompressiveStrengthTest",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment."
+      },
+      "labels" : {
+        "IRI-based" : "UniaxialCompressiveStrengthTest"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#UnderwaterReboundTest",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "When the value of the angle is positive, the corrected value is negative, and vice versa; \nThe closer the angle is to the horizontal, the smaller the absolute value of the corrected value; \nWhen the test area is a top surface, the corrected value is positive;\nWhen the test area is bottom surface, the corrected value is negative;\nThe deeper the water is, the larger the corrected value is;\nThe larger the measured rebound value is, the smaller the absolute value of the corrected value is."
+      },
+      "labels" : {
+        "IRI-based" : "UnderwaterReboundTest"
+      }
+    } ],
+    "subClasses" : [ "37", "38" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "47",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "52",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "65",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "67",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#ReboundTest",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReboundTest"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#case",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. \nThe original rebound value is 42.\nThe design strength of concrete is 40."
+      },
+      "labels" : {
+        "IRI-based" : "case"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#UnderwaterReboundTest",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "When the value of the angle is positive, the corrected value is negative, and vice versa; \nThe closer the angle is to the horizontal, the smaller the absolute value of the corrected value; \nWhen the test area is a top surface, the corrected value is positive;\nWhen the test area is bottom surface, the corrected value is negative;\nThe deeper the water is, the larger the corrected value is;\nThe larger the measured rebound value is, the smaller the absolute value of the corrected value is."
+      },
+      "labels" : {
+        "IRI-based" : "UnderwaterReboundTest"
+      }
+    } ],
+    "id" : "38",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "68",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "70",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#Material",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Material"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#case",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. \nThe original rebound value is 42.\nThe design strength of concrete is 40."
+      },
+      "labels" : {
+        "IRI-based" : "case"
+      }
+    } ],
+    "subClasses" : [ "75" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://w3id.org/kmo#Standard",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Standard"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#GB/T9138-2015",
+      "baseIri" : "http://w3id.org/kmo",
+      "annotations" : {
+        "date" : [ {
+          "identifier" : "date",
+          "language" : "undefined",
+          "value" : "2024-02-13T14:36:05Z",
+          "type" : "label"
+        } ],
+        "creator" : [ {
+          "identifier" : "creator",
+          "language" : "undefined",
+          "value" : "DMU & CU",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GB/T9138-2015"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#JGJ55-2011",
+      "baseIri" : "http://w3id.org/kmo",
+      "annotations" : {
+        "date" : [ {
+          "identifier" : "date",
+          "language" : "undefined",
+          "value" : "2024-02-13T15:53:11Z",
+          "type" : "label"
+        } ],
+        "creator" : [ {
+          "identifier" : "creator",
+          "language" : "undefined",
+          "value" : "DMU & CU",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "JGJ55-2011"
+      }
+    } ],
+    "subClasses" : [ "45" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "79",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "82",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#Equipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Equipment"
+    },
+    "subClasses" : [ "83", "84", "85", "86" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "87",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "5",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "92",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#CompressiveStrengthTest",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CompressiveStrengthTest"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#case",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "In this case, test angle is horizontal, test surface is top, and water depth is 5.6 m. \nThe original rebound value is 42.\nThe design strength of concrete is 40."
+      },
+      "labels" : {
+        "IRI-based" : "case"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#UniaxialCompressiveStrengthTest",
+      "baseIri" : "http://w3id.org/kmo",
+      "comment" : {
+        "undefined" : "Establish the relationship between the actual strength value and the rebound value of concretes serving under ambient water environment."
+      },
+      "labels" : {
+        "IRI-based" : "UniaxialCompressiveStrengthTest"
+      }
+    } ],
+    "id" : "37",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "http://w3id.org/kmo#UnderwaterInspectionStandard",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "annotations" : {
+      "date" : [ {
+        "identifier" : "date",
+        "language" : "undefined",
+        "value" : "2024-02-16T15:44:37Z",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "DMU & CU",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "UnderwaterInspectionStandard"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#GB/T50081-2019",
+      "baseIri" : "http://w3id.org/kmo",
+      "annotations" : {
+        "date" : [ {
+          "identifier" : "date",
+          "language" : "undefined",
+          "value" : "2024-02-13T15:53:50Z",
+          "type" : "label"
+        } ],
+        "creator" : [ {
+          "identifier" : "creator",
+          "language" : "undefined",
+          "value" : "DMU & CU",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "GB/T50081-2019"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#JGJ/T23-2011",
+      "baseIri" : "http://w3id.org/kmo",
+      "annotations" : {
+        "date" : [ {
+          "identifier" : "date",
+          "language" : "undefined",
+          "value" : "2024-02-13T15:44:59Z",
+          "type" : "label"
+        } ],
+        "creator" : [ {
+          "identifier" : "creator",
+          "language" : "undefined",
+          "value" : "DMU & CU",
+          "type" : "label"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "JGJ/T23-2011"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#JTG5120-2021",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "JTG5120-2021"
+      }
+    }, {
+      "iri" : "http://w3id.org/kmo#T/CECSG:J56-2019",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "T/CECSG:J56-2019"
+      }
+    } ],
+    "id" : "45",
+    "superClasses" : [ "13" ]
+  }, {
+    "iri" : "http://w3id.org/kmo#Bridge",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bridge"
+    },
+    "id" : "2"
+  }, {
+    "iri" : "http://w3id.org/kmo#CompressiveStrengthTestingMachine",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CompressiveStrengthTestingMachine"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#MicrocomputerControlledElectro-hydraulicServoTestingMachine",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "MicrocomputerControlledElectro-hydraulicServoTestingMachine"
+      }
+    } ],
+    "id" : "84",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "116",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "117",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#Concrete",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concrete"
+    },
+    "id" : "75",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "89",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "81",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "119",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "121",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "123",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://w3id.org/kmo#Organization",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#DMU",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "DMU"
+      }
+    } ],
+    "id" : "51"
+  }, {
+    "iri" : "http://w3id.org/kmo#Ladder",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ladder"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#ZJYY_Ladder",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "ZJYY_Ladder"
+      }
+    } ],
+    "id" : "85",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://w3id.org/kmo#ReboundHammer",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReboundHammer"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#ZJYY_ReboundHammer",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "ZJYY_ReboundHammer"
+      }
+    } ],
+    "id" : "83",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://w3id.org/kmo#Wetsuit",
+    "baseIri" : "http://w3id.org/kmo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Wetsuit"
+    },
+    "individuals" : [ {
+      "iri" : "http://w3id.org/kmo#SBART_Wetsuit",
+      "baseIri" : "http://w3id.org/kmo",
+      "labels" : {
+        "IRI-based" : "SBART_Wetsuit"
+      }
+    } ],
+    "id" : "86",
+    "superClasses" : [ "31" ]
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "4",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "44",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "48",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "46",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "55",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "57",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "77",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "98",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "101",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "102",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "104",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "105",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "106",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "107",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "109",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "110",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "112",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "113",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "114",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "115",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "118",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "120",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "122",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "124",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "125",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "126",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "127",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "129",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "131",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "132",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "135",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://w3id.org/kmo#totalLength",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "totalLength"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rah",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "Rah"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://w3id.org/kmo#materialID",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "materialID"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rab",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "Rab"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://w3id.org/kmo#applicableScope",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "applicableScope"
+    },
+    "domain" : "13",
+    "attributes" : [ "datatype" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://w3id.org/kmo#Raa",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "Raa"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "5",
+    "subproperty" : [ "19", "20", "21", "22", "23" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://w3id.org/kmo#maxWidth",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "maxWidth"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://w3id.org/kmo#brand",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "brand"
+    },
+    "domain" : "31",
+    "attributes" : [ "datatype" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://w3id.org/kmo#phone",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "phone"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://w3id.org/kmo#hasCriterion",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasCriterion"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://w3id.org/kmo#guideTo",
+    "inverse" : "46",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "guideTo"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "45",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "44"
+  }, {
+    "iri" : "http://w3id.org/kmo#guideTo",
+    "inverse" : "46",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "guideTo"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "45",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://w3id.org/kmo#guidedBy",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "guidedBy"
+    },
+    "domain" : "36",
+    "attributes" : [ "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://w3id.org/kmo#builtBy",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "builtBy"
+    },
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://w3id.org/kmo#isSideSurface",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "isSideSurface"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rm4",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "Rm4"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://w3id.org/kmo#briidgeID",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "briidgeID"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "57"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rm3",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "Rm3"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rm2",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "Rm2"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rm1",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "Rm1"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://w3id.org/kmo#hasExperimentalMaterial",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasExperimentalMaterial"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "36",
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://w3id.org/kmo#materialCondition",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "materialCondition"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://w3id.org/kmo#isHorizontal",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "isHorizontal"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://w3id.org/kmo#managedBy",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "managedBy"
+    },
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://w3id.org/kmo#build",
+    "inverse" : "50",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "build"
+    },
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://w3id.org/kmo#manage",
+    "inverse" : "72",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "manage"
+    },
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://w3id.org/kmo#conduct",
+    "inverse" : "21",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "conduct"
+    },
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://w3id.org/kmo#maxSpanLength",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "maxSpanLength"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://w3id.org/kmo#isTopSurface",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "isTopSurface"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://w3id.org/kmo#conductedBy",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "conductedBy"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "36",
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "81",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rat",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "89",
+    "label" : {
+      "IRI-based" : "Rat"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://w3id.org/kmo#releaseDate",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "releaseDate"
+    },
+    "domain" : "13",
+    "attributes" : [ "datatype" ],
+    "id" : "91"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rma4",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "Rma4"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rma1",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "92",
+    "label" : {
+      "IRI-based" : "Rma1"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rma2",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "Rma2"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "95"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rma3",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "Rma3"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "96"
+  }, {
+    "iri" : "http://w3id.org/kmo#date",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "date"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rn",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "Rn"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "98"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rt",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "Rt"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "99"
+  }, {
+    "range" : "31",
+    "domain" : "86",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://w3id.org/kmo#Ra",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "Ra"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "101"
+  }, {
+    "range" : "31",
+    "domain" : "83",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "102"
+  }, {
+    "range" : "13",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "103"
+  }, {
+    "range" : "31",
+    "domain" : "85",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "104"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rb",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "66",
+    "label" : {
+      "IRI-based" : "Rb"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "105"
+  }, {
+    "range" : "31",
+    "domain" : "84",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "106"
+  }, {
+    "iri" : "http://w3id.org/kmo#guideTo",
+    "inverse" : "46",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "guideTo"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "13",
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://w3id.org/kmo#waterDepth",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "65",
+    "label" : {
+      "IRI-based" : "waterDepth"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "?????0-10m?"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "107"
+  }, {
+    "iri" : "http://w3id.org/kmo#fcu",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "68",
+    "label" : {
+      "IRI-based" : "fcu"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://w3id.org/kmo#Rh",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "Rh"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "109"
+  }, {
+    "iri" : "http://w3id.org/kmo#R",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "R"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "110"
+  }, {
+    "iri" : "http://w3id.org/kmo#name",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "name"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "111"
+  }, {
+    "range" : "36",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://w3id.org/kmo#weight",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "weight"
+    },
+    "domain" : "31",
+    "attributes" : [ "datatype" ],
+    "id" : "113"
+  }, {
+    "range" : "36",
+    "domain" : "37",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "114"
+  }, {
+    "range" : "8",
+    "domain" : "75",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "iri" : "http://w3id.org/kmo#needEquipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "needEquipment"
+    },
+    "domain" : "36",
+    "attributes" : [ "object" ],
+    "id" : "118"
+  }, {
+    "iri" : "http://w3id.org/kmo#materialID",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "121",
+    "label" : {
+      "IRI-based" : "materialID"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "120"
+  }, {
+    "iri" : "http://w3id.org/kmo#designStrength",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "123",
+    "label" : {
+      "IRI-based" : "designStrength"
+    },
+    "domain" : "8",
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "122"
+  }, {
+    "iri" : "http://w3id.org/kmo#needEquipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "needEquipment"
+    },
+    "domain" : "38",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "124"
+  }, {
+    "iri" : "http://w3id.org/kmo#needEquipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "needEquipment"
+    },
+    "domain" : "38",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "125"
+  }, {
+    "iri" : "http://w3id.org/kmo#needEquipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "83",
+    "label" : {
+      "IRI-based" : "needEquipment"
+    },
+    "domain" : "38",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "126"
+  }, {
+    "iri" : "http://w3id.org/kmo#w2",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "w2"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "127"
+  }, {
+    "iri" : "http://w3id.org/kmo#w1",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "w1"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "128"
+  }, {
+    "iri" : "http://w3id.org/kmo#needEquipment",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "needEquipment"
+    },
+    "domain" : "37",
+    "attributes" : [ "someValues", "object" ],
+    "id" : "129"
+  }, {
+    "iri" : "http://w3id.org/kmo#w3",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "w3"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "iri" : "http://w3id.org/kmo#experimentationID",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "119",
+    "label" : {
+      "IRI-based" : "experimentationID"
+    },
+    "domain" : "36",
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "131"
+  }, {
+    "iri" : "http://w3id.org/kmo#angle",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "117",
+    "label" : {
+      "IRI-based" : "angle"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "132"
+  }, {
+    "iri" : "http://w3id.org/kmo#isBottomSurface",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "isBottomSurface"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "133"
+  }, {
+    "iri" : "http://w3id.org/kmo#w0",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "116",
+    "label" : {
+      "IRI-based" : "w0"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "134"
+  }, {
+    "iri" : "http://w3id.org/kmo#hasMaterialType",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasMaterialType"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://w3id.org/kmo#address",
+    "baseIri" : "http://w3id.org/kmo",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "address"
+    },
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "135"
+  } ]
+}
