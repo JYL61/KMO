@@ -104,7 +104,7 @@
   "@id" : "http://w3id.org/kmo",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML."
+    "@value" : "Knowledge Mining Ontology (KMO) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML."
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#Bridge",
@@ -124,7 +124,7 @@
   "@id" : "http://w3id.org/kmo#CompressiveStrengthTestingMachine",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#Concrete",
@@ -139,10 +139,20 @@
     "@id" : "http://w3id.org/kmo#Organization"
   } ]
 }, {
-  "@id" : "http://w3id.org/kmo#Equipment",
+  "@id" : "http://w3id.org/kmo#ExperimentalEquipment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#Thing"
+  } ]
+}, {
+  "@id" : "http://w3id.org/kmo#ExperimentalFactor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "DMU & CU"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2024-02-19T15:29:23Z"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#Experimentation",
@@ -252,7 +262,7 @@
   "@id" : "http://w3id.org/kmo#Ladder",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#Material",
@@ -316,7 +326,7 @@
   "@id" : "http://w3id.org/kmo#ReboundHammer",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#ReboundTest",
@@ -407,6 +417,45 @@
     "@id" : "http://w3id.org/kmo#UnderwaterInspectionStandard"
   } ]
 }, {
+  "@id" : "http://w3id.org/kmo#TestingAngle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "DMU & CU"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2024-02-19T15:31:34Z"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/kmo#ExperimentalFactor"
+  } ]
+}, {
+  "@id" : "http://w3id.org/kmo#TestingPouringSurface",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "DMU & CU"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2024-02-19T15:31:34Z"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/kmo#ExperimentalFactor"
+  } ]
+}, {
+  "@id" : "http://w3id.org/kmo#TestingWaterDepth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "DMU & CU"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2024-02-19T15:31:34Z"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://w3id.org/kmo#ExperimentalFactor"
+  } ]
+}, {
   "@id" : "http://w3id.org/kmo#UnderwaterInspectionStandard",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/dc/elements/1.1/creator" : [ {
@@ -471,7 +520,7 @@
   "@id" : "http://w3id.org/kmo#Wetsuit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#ZJYY_Ladder",
@@ -513,7 +562,7 @@
   "@id" : "http://w3id.org/kmo#brand",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -681,6 +730,22 @@
     "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
+  "@id" : "http://w3id.org/kmo#hasFactor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "DMU & CU"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2024-02-19T15:29:41Z"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://w3id.org/kmo#Experimentation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://w3id.org/kmo#ExperimentalFactor"
+  } ]
+}, {
   "@id" : "http://w3id.org/kmo#hasMaterialType",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -807,7 +872,7 @@
     "@id" : "http://w3id.org/kmo#Experimentation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ]
 }, {
   "@id" : "http://w3id.org/kmo#phone",
@@ -858,7 +923,7 @@
   "@id" : "http://w3id.org/kmo#weight",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://w3id.org/kmo#Equipment"
+    "@id" : "http://w3id.org/kmo#ExperimentalEquipment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#float"

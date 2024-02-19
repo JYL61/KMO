@@ -7,7 +7,7 @@
 @base <http://w3id.org/kmo#> .
 
 <http://w3id.org/kmo> rdf:type owl:Ontology ;
-                       rdfs:comment "Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML." .
+                       rdfs:comment "Knowledge Mining Ontology (KMO) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML." .
 
 #################################################################
 #    Annotation properties
@@ -82,6 +82,14 @@
                          rdfs:range :Material .
 
 
+###  http://w3id.org/kmo#hasFactor
+:hasFactor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Experimentation ;
+           rdfs:range :ExperimentalFactor ;
+           <http://purl.org/dc/elements/1.1/creator> "DMU & CU" ;
+           <http://purl.org/dc/elements/1.1/date> "2024-02-19T15:29:41Z"^^xsd:dateTime .
+
+
 ###  http://w3id.org/kmo#hasMaterialType
 :hasMaterialType rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf owl:topObjectProperty ;
@@ -105,7 +113,7 @@
 ###  http://w3id.org/kmo#needEquipment
 :needEquipment rdf:type owl:ObjectProperty ;
                rdfs:domain :Experimentation ;
-               rdfs:range :Equipment .
+               rdfs:range :ExperimentalEquipment .
 
 
 #################################################################
@@ -213,7 +221,7 @@
 
 ###  http://w3id.org/kmo#brand
 :brand rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Equipment ;
+       rdfs:domain :ExperimentalEquipment ;
        rdfs:range xsd:string .
 
 
@@ -339,7 +347,7 @@
 
 ###  http://w3id.org/kmo#weight
 :weight rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Equipment ;
+        rdfs:domain :ExperimentalEquipment ;
         rdfs:range xsd:float .
 
 
@@ -363,7 +371,7 @@
 
 ###  http://w3id.org/kmo#CompressiveStrengthTestingMachine
 :CompressiveStrengthTestingMachine rdf:type owl:Class ;
-                                   rdfs:subClassOf :Equipment .
+                                   rdfs:subClassOf :ExperimentalEquipment .
 
 
 ###  http://w3id.org/kmo#Concrete
@@ -371,9 +379,15 @@
           rdfs:subClassOf :Material .
 
 
-###  http://w3id.org/kmo#Equipment
-:Equipment rdf:type owl:Class ;
-           rdfs:subClassOf owl:Thing .
+###  http://w3id.org/kmo#ExperimentalEquipment
+:ExperimentalEquipment rdf:type owl:Class ;
+                       rdfs:subClassOf owl:Thing .
+
+
+###  http://w3id.org/kmo#ExperimentalFactor
+:ExperimentalFactor rdf:type owl:Class ;
+                    <http://purl.org/dc/elements/1.1/creator> "DMU & CU" ;
+                    <http://purl.org/dc/elements/1.1/date> "2024-02-19T15:29:23Z"^^xsd:dateTime .
 
 
 ###  http://w3id.org/kmo#Experimentation
@@ -387,7 +401,7 @@
 
 ###  http://w3id.org/kmo#Ladder
 :Ladder rdf:type owl:Class ;
-        rdfs:subClassOf :Equipment .
+        rdfs:subClassOf :ExperimentalEquipment .
 
 
 ###  http://w3id.org/kmo#Material
@@ -410,7 +424,7 @@
 
 ###  http://w3id.org/kmo#ReboundHammer
 :ReboundHammer rdf:type owl:Class ;
-               rdfs:subClassOf :Equipment .
+               rdfs:subClassOf :ExperimentalEquipment .
 
 
 ###  http://w3id.org/kmo#ReboundTest
@@ -435,6 +449,27 @@
           rdfs:subClassOf owl:Thing .
 
 
+###  http://w3id.org/kmo#TestingAngle
+:TestingAngle rdf:type owl:Class ;
+              rdfs:subClassOf :ExperimentalFactor ;
+              <http://purl.org/dc/elements/1.1/creator> "DMU & CU" ;
+              <http://purl.org/dc/elements/1.1/date> "2024-02-19T15:31:34Z"^^xsd:dateTime .
+
+
+###  http://w3id.org/kmo#TestingPouringSurface
+:TestingPouringSurface rdf:type owl:Class ;
+                       rdfs:subClassOf :ExperimentalFactor ;
+                       <http://purl.org/dc/elements/1.1/creator> "DMU & CU" ;
+                       <http://purl.org/dc/elements/1.1/date> "2024-02-19T15:31:34Z"^^xsd:dateTime .
+
+
+###  http://w3id.org/kmo#TestingWaterDepth
+:TestingWaterDepth rdf:type owl:Class ;
+                   rdfs:subClassOf :ExperimentalFactor ;
+                   <http://purl.org/dc/elements/1.1/creator> "DMU & CU" ;
+                   <http://purl.org/dc/elements/1.1/date> "2024-02-19T15:31:34Z"^^xsd:dateTime .
+
+
 ###  http://w3id.org/kmo#UnderwaterInspectionStandard
 :UnderwaterInspectionStandard rdf:type owl:Class ;
                               rdfs:subClassOf :Standard ,
@@ -452,7 +487,7 @@
 
 ###  http://w3id.org/kmo#Wetsuit
 :Wetsuit rdf:type owl:Class ;
-         rdfs:subClassOf :Equipment .
+         rdfs:subClassOf :ExperimentalEquipment .
 
 
 #################################################################

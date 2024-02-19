@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Knowledge Mining Ontology (kmo)</title>
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Knowledge Mining Ontology (KMO)</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/kmo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/kmo","name":"Knowledge Mining Ontology (kmo)", "headline":"Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.", "datePublished":"2023/11/06", "version":"v2.0", "author":[{"@type":"Person","name":"Yali Jiang"},{"@type":"Person","name":"Haijiang Li"},{"@type":"Person","name":"Gang Yang"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/kmo","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/kmo","name":"Knowledge Mining Ontology (KMO)", "headline":"Knowledge Mining Ontology (KMO) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.", "datePublished":"2023/11/06", "version":"v2.0", "author":[{"@type":"Person","name":"Yali Jiang"},{"@type":"Person","name":"Haijiang Li"},{"@type":"Person","name":"Gang Yang"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -54,7 +54,7 @@ $(function(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>Knowledge Mining Ontology (kmo)</h1>
+<h1>Knowledge Mining Ontology (KMO)</h1>
 <h2>Release 2023/11/06</h2>
 
 
@@ -66,7 +66,7 @@ $(function(){
 <dt>Revision:</dt>
 <dd>v2.0</dd>
 <dt>Authors:</dt>
-<dd>Yali Jiang, Dalian Maritime University</dd><dd>Haijiang Li, Cardiff University</dd><dd>Gang Yang, Cardiff University</dd>
+<dd>Yali Jiang, Dalian Maritime University</dd><dd>Haijiang Li, Cardiff University</dd><dd>Gang Yang, Dalian Maritime University</dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
@@ -76,15 +76,15 @@ $(function(){
 </div>
 <div class="status">
 <div>
-<span>kmo Ontology Specification</span>
+<span>Ontology Specification</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</span>
+Knowledge Mining Ontology (KMO) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</span>
 </div>
 <div id="toc"></div>  
 
 <!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">Knowledge Mining Ontology (kmo)): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+    <div id="overview"><h2 id="overv" class="list">Knowledge Mining Ontology (KMO)): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
@@ -111,8 +111,13 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">
-         <span>equipment</span>
+      <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">
+         <span>experimental equipment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">
+         <span>experimental factor</span>
       </a>
    </li>
    <li>
@@ -148,6 +153,21 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">
          <span>standard</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#TestingAngle" title="http://w3id.org/kmo#TestingAngle">
+         <span>testing angle</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#TestingPouringSurface" title="http://w3id.org/kmo#TestingPouringSurface">
+         <span>testing pouring surface</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#TestingWaterDepth" title="http://w3id.org/kmo#TestingWaterDepth">
+         <span>testing water depth</span>
       </a>
    </li>
    <li>
@@ -199,6 +219,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">
          <span>has experimental material</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://w3id.org/kmo#hasFactor" title="http://w3id.org/kmo#hasFactor">
+         <span>has factor</span>
       </a>
    </li>
    <li>
@@ -460,8 +485,8 @@ This ontology has the following classes and properties.</span>
    
 
 <!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Knowledge Mining Ontology (kmo)) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by Knowledge Mining Ontology (kmo)).
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Knowledge Mining Ontology (KMO)) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Knowledge Mining Ontology (KMO)).
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
@@ -487,8 +512,13 @@ This section provides details for each class and property defined by Knowledge M
          </a>
       </li>
       <li>
-         <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">
-            <span>equipment</span>
+         <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">
+            <span>experimental equipment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">
+            <span>experimental factor</span>
          </a>
       </li>
       <li>
@@ -524,6 +554,21 @@ This section provides details for each class and property defined by Knowledge M
       <li>
          <a href="#http://w3id.org/kmo#Standard" title="http://w3id.org/kmo#Standard">
             <span>standard</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#TestingAngle" title="http://w3id.org/kmo#TestingAngle">
+            <span>testing angle</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#TestingPouringSurface" title="http://w3id.org/kmo#TestingPouringSurface">
+            <span>testing pouring surface</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#TestingWaterDepth" title="http://w3id.org/kmo#TestingWaterDepth">
+            <span>testing water depth</span>
          </a>
       </li>
       <li>
@@ -604,7 +649,7 @@ This section provides details for each class and property defined by Knowledge M
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
@@ -630,13 +675,13 @@ This section provides details for each class and property defined by Knowledge M
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://w3id.org/kmo#Equipment">
-      <h3>equipment<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="http://w3id.org/kmo#ExperimentalEquipment">
+      <h3>experimental equipment<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://w3id.org/kmo#Equipment</p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ExperimentalEquipment</p>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -667,6 +712,38 @@ This section provides details for each class and property defined by Knowledge M
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://w3id.org/kmo#ExperimentalFactor">
+      <h3>experimental factor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#ExperimentalFactor</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>19T15:29:23Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#TestingAngle" title="http://w3id.org/kmo#TestingAngle">testing angle</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#TestingPouringSurface" title="http://w3id.org/kmo#TestingPouringSurface">testing pouring surface</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://w3id.org/kmo#TestingWaterDepth" title="http://w3id.org/kmo#TestingWaterDepth">testing water depth</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#hasFactor" title="http://w3id.org/kmo#hasFactor">has factor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="http://w3id.org/kmo#Experimentation">
       <h3>experimentation<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -693,6 +770,7 @@ This section provides details for each class and property defined by Knowledge M
             <a href="#http://w3id.org/kmo#conductedBy" title="http://w3id.org/kmo#conductedBy">conducted by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#guidedBy" title="http://w3id.org/kmo#guidedBy">guided by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">has experimental material</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#hasFactor" title="http://w3id.org/kmo#hasFactor">has factor</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#http://w3id.org/kmo#needEquipment" title="http://w3id.org/kmo#needEquipment">need equipment</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -720,7 +798,7 @@ This section provides details for each class and property defined by Knowledge M
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
@@ -814,7 +892,7 @@ This section provides details for each class and property defined by Knowledge M
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
@@ -886,6 +964,81 @@ This section provides details for each class and property defined by Knowledge M
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://w3id.org/kmo#TestingAngle">
+      <h3>testing angle<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#TestingAngle</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>19T15:31:34Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">experimental factor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#TestingPouringSurface">
+      <h3>testing pouring surface<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#TestingPouringSurface</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>19T15:31:34Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">experimental factor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://w3id.org/kmo#TestingWaterDepth">
+      <h3>testing water depth<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#TestingWaterDepth</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>19T15:31:34Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">experimental factor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="http://w3id.org/kmo#UnderwaterInspectionStandard">
       <h3>underwater inspection standard<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -929,7 +1082,7 @@ This section provides details for each class and property defined by Knowledge M
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+            <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has members</dt>
@@ -980,6 +1133,11 @@ This section provides details for each class and property defined by Knowledge M
       <li>
          <a href="#http://w3id.org/kmo#hasExperimentalMaterial" title="http://w3id.org/kmo#hasExperimentalMaterial">
             <span>has experimental material</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://w3id.org/kmo#hasFactor" title="http://w3id.org/kmo#hasFactor">
+            <span>has factor</span>
          </a>
       </li>
       <li>
@@ -1223,6 +1381,38 @@ This section provides details for each class and property defined by Knowledge M
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://w3id.org/kmo#hasFactor">
+      <h3>has factor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://w3id.org/kmo#hasFactor</p>
+      <dl>
+         <dt>Date:
+        </dt>
+         <dd>19T15:29:41Z/02/2024</dd>
+      </dl>
+      <dl>
+         <dt>Authors:
+                    </dt>
+         <dd>DMU &amp; CU</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#Experimentation" title="http://w3id.org/kmo#Experimentation">experimentation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://w3id.org/kmo#ExperimentalFactor" title="http://w3id.org/kmo#ExperimentalFactor">experimental factor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://w3id.org/kmo#hasMaterialType">
       <h3>has material type<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -1321,7 +1511,7 @@ This section provides details for each class and property defined by Knowledge M
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1567,7 +1757,7 @@ This section provides details for each class and property defined by Knowledge M
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2152,7 +2342,7 @@ This section provides details for each class and property defined by Knowledge M
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://w3id.org/kmo#Equipment" title="http://w3id.org/kmo#Equipment">equipment</a>
+               <a href="#http://w3id.org/kmo#ExperimentalEquipment" title="http://w3id.org/kmo#ExperimentalEquipment">experimental equipment</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

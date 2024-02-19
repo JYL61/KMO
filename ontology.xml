@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
     <owl:Ontology rdf:about="http://w3id.org/kmo">
-        <rdfs:comment>Knowledge Mining Ontology (kmo) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</rdfs:comment>
+        <rdfs:comment>Knowledge Mining Ontology (KMO) defines a high-level global schema and provides a vocabulary for users to support automatic knowledge mining through experimental datasets using ontology and ML.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -145,6 +145,18 @@
     
 
 
+    <!-- http://w3id.org/kmo#hasFactor -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/kmo#hasFactor">
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#ExperimentalFactor"/>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-19T15:29:41Z</dc:date>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://w3id.org/kmo#hasMaterialType -->
 
 
@@ -182,7 +194,7 @@
 
     <owl:ObjectProperty rdf:about="http://w3id.org/kmo#needEquipment">
         <rdfs:domain rdf:resource="http://w3id.org/kmo#Experimentation"/>
-        <rdfs:range rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:range rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
     </owl:ObjectProperty>
     
 
@@ -378,7 +390,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#brand">
-        <rdfs:domain rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -591,7 +603,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://w3id.org/kmo#weight">
-        <rdfs:domain rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:domain rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -637,7 +649,7 @@
 
 
     <owl:Class rdf:about="http://w3id.org/kmo#CompressiveStrengthTestingMachine">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
     </owl:Class>
     
 
@@ -651,11 +663,21 @@
     
 
 
-    <!-- http://w3id.org/kmo#Equipment -->
+    <!-- http://w3id.org/kmo#ExperimentalEquipment -->
 
 
-    <owl:Class rdf:about="http://w3id.org/kmo#Equipment">
+    <owl:Class rdf:about="http://w3id.org/kmo#ExperimentalEquipment">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#ExperimentalFactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#ExperimentalFactor">
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-19T15:29:23Z</dc:date>
     </owl:Class>
     
 
@@ -679,7 +701,7 @@
 
 
     <owl:Class rdf:about="http://w3id.org/kmo#Ladder">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
     </owl:Class>
     
 
@@ -718,7 +740,7 @@
 
 
     <owl:Class rdf:about="http://w3id.org/kmo#ReboundHammer">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
     </owl:Class>
     
 
@@ -759,6 +781,39 @@
     
 
 
+    <!-- http://w3id.org/kmo#TestingAngle -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#TestingAngle">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalFactor"/>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-19T15:31:34Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#TestingPouringSurface -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#TestingPouringSurface">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalFactor"/>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-19T15:31:34Z</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/kmo#TestingWaterDepth -->
+
+
+    <owl:Class rdf:about="http://w3id.org/kmo#TestingWaterDepth">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalFactor"/>
+        <dc:creator>DMU &amp; CU</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-19T15:31:34Z</dc:date>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/kmo#UnderwaterInspectionStandard -->
 
 
@@ -786,7 +841,7 @@
 
 
     <owl:Class rdf:about="http://w3id.org/kmo#Wetsuit">
-        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/kmo#ExperimentalEquipment"/>
     </owl:Class>
     
 
